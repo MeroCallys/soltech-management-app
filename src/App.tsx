@@ -4,7 +4,7 @@ import { GlobalStyles } from "./styles/Global";
 import { theme } from "./styles/Theme";
 import Home from "../src/pages/home/Home";
 import MainLayout from "./pages/layout/MainLayout";
-import Inventory from "./pages/Inventory/Inventory";
+import Inventory from "./pages/inventory/Inventory";
 
 function App() {
   return (
