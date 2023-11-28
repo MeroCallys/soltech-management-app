@@ -8,18 +8,17 @@ import {
   NavMenuLinks,
   LoginButton,
   ButtonWrapper,
-  RegisterButton,
+  SignupButton,
   LogoLink,
   NavMenuWrapper,
 } from "./Header.styled";
 import { useState } from "react";
 
 function Header() {
-  const [showNav, setShowNav] = useState(false);
+  const [isCollapsed, setCollapsed] = useState(false);
 
   const handleClick = () => {
-    setShowNav(!showNav);
-    console.log(showNav);
+    setCollapsed(!isCollapsed);
   };
   return (
     <HeaderS>
@@ -28,22 +27,22 @@ function Header() {
           <LogoWrapper>
             <LogoLink to="/">SolTech</LogoLink>
           </LogoWrapper>
-          <ToggeleSwitch $showNav={showNav} onClick={handleClick}>
+          <ToggeleSwitch $isCollapsed={isCollapsed} onClick={handleClick}>
             <span></span>
             <span></span>
             <span></span>
           </ToggeleSwitch>
         </LogoContainer>
-        <NavContainer $showNav={showNav}>
+        <NavContainer $isCollapsed={isCollapsed}>
           <NavMenuWrapper>
             <NavMenuLinks to="/">Home</NavMenuLinks>
-            <NavMenuLinks to="/">Dashboard</NavMenuLinks>
-            <NavMenuLinks to="/">Ledger</NavMenuLinks>
-            <NavMenuLinks to="/">Inventory</NavMenuLinks>
+            <NavMenuLinks to="dashboard">Dashboard</NavMenuLinks>
+            <NavMenuLinks to="ledger">Ledger</NavMenuLinks>
+            <NavMenuLinks to="inventory">Inventory</NavMenuLinks>
           </NavMenuWrapper>
           <ButtonWrapper>
-            <RegisterButton to="/">Register</RegisterButton>
-            <LoginButton to="/">Login</LoginButton>
+            <SignupButton to="signup">Signup</SignupButton>
+            <LoginButton to="login">Login</LoginButton>
           </ButtonWrapper>
         </NavContainer>
       </Container>

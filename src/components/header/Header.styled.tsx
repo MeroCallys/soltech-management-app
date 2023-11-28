@@ -5,28 +5,28 @@ import { NavLink } from "react-router-dom";
 export const HeaderS = styled.header`
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 `;
 
 export const Container = styled.nav`
   margin: 1rem;
-  padding: 0 1rem;
   background-color: ${({ theme }) => theme.colors.black.main};
   display: flex;
+  padding: 0 1.5rem !important;
 
   @media ${device.xs} {
-    width: 97vw;
+    flex: 1 0 90%;
     flex-direction: column;
     border-radius: 0.25rem;
   }
   @media ${device.sm} {
-    width: 97vw;
+    flex: 1 0 90%;
     flex-direction: column;
     border-radius: 0.25rem;
   }
   @media ${device.md} {
-    width: 97vw;
+    flex: 1 0 90%;
     flex-direction: column;
     border-radius: 0.25rem;
   }
@@ -94,7 +94,7 @@ export const LogoLink = styled(NavLink)`
   text-decoration: none;
 `;
 
-export const ToggeleSwitch = styled.button<{ $showNav: boolean }>`
+export const ToggeleSwitch = styled.button<{ $isCollapsed: boolean }>`
   transition: all 0.2s ease-in-out;
   &:hover {
     border-radius: 0.75rem;
@@ -158,26 +158,26 @@ export const ToggeleSwitch = styled.button<{ $showNav: boolean }>`
   }
 `;
 
-export const NavContainer = styled.section<{ $showNav: boolean }>`
+export const NavContainer = styled.section<{ $isCollapsed: boolean }>`
   display: flex;
-  align-items: center;
+  width: 100%;
   @media ${device.xs} {
-    width: 80vw;
     margin-top: 1rem;
     flex-direction: column;
-    display: ${(props) => (props.$showNav ? "flex" : "none")};
+    width: 80%;
+    display: ${(props) => (props.$isCollapsed ? "flex" : "none")};
   }
   @media ${device.sm} {
-    width: 80vw;
     margin-top: 1rem;
     flex-direction: column;
-    display: ${(props) => (props.$showNav ? "flex" : "none")};
+    width: 80%;
+    display: ${(props) => (props.$isCollapsed ? "flex" : "none")};
   }
   @media ${device.md} {
-    width: 80vw;
     margin-top: 1rem;
     flex-direction: column;
-    display: ${(props) => (props.$showNav ? "flex" : "none")};
+    width: 80%;
+    display: ${(props) => (props.$isCollapsed ? "flex" : "none")};
   }
   @media ${device.lg} {
     align-items: center;
@@ -231,7 +231,7 @@ export const NavMenuLinks = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white.main};
   text-decoration: none;
   padding: 1rem 0.5rem;
-
+  font-size: 0.8rem;
   @media ${device.xs} {
     width: 100%;
   }
@@ -245,30 +245,29 @@ export const NavMenuLinks = styled(NavLink)`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  margin: 0.6rem 1rem 0.6rem 0;
+
   @media ${device.xs} {
     flex-direction: column;
-    margin-bottom: 1rem;
     gap: 1rem;
-    width: 95%;
+    width: 100%;
+    padding: 1rem 0.8rem;
   }
   @media ${device.sm} {
     flex-direction: column;
-    margin-bottom: 1rem;
     gap: 1rem;
-    width: 95%;
+    width: 100%;
+    padding: 1rem 0.8rem;
   }
   @media ${device.md} {
     flex-direction: column;
-    margin-bottom: 1rem;
     gap: 1rem;
-    width: 95%;
+    width: 100%;
+    padding: 1rem 0.8rem;
   }
   @media ${device.lg} {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 95%;
   }
   @media ${device.xl} {
     align-items: center;
@@ -319,7 +318,7 @@ export const LoginButton = styled(NavLink)`
     padding: 1rem 2rem;
   }
 `;
-export const RegisterButton = styled(NavLink)`
+export const SignupButton = styled(NavLink)`
   text-decoration: none;
   text-align: center;
   font-size: 0.8rem;
@@ -329,24 +328,20 @@ export const RegisterButton = styled(NavLink)`
     width: 100%;
     border-radius: 0.5rem;
     padding: 0.75rem;
-    color: ${({ theme }) => theme.colors.white.main};
-    background-color: ${({ theme }) => theme.colors.white.white9};
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.black.main};
-      background-color: ${({ theme }) => theme.colors.black.black10};
-    }
+    color: ${({ theme }) => theme.colors.white.white2};
+    background-color: ${({ theme }) => theme.colors.white.white10};
+    /*  */
   }
   @media ${device.sm} {
     width: 100%;
     border-radius: 0.5rem;
     padding: 0.75rem;
-    color: ${({ theme }) => theme.colors.white.main};
-    background-color: ${({ theme }) => theme.colors.white.white9};
+    color: ${({ theme }) => theme.colors.black.main};
+    background-color: ${({ theme }) => theme.colors.white.white5};
 
     &:hover {
       color: ${({ theme }) => theme.colors.black.main};
-      background-color: ${({ theme }) => theme.colors.black.black10};
+      background-color: ${({ theme }) => theme.colors.white.main};
     }
   }
   @media ${device.md} {
@@ -354,17 +349,17 @@ export const RegisterButton = styled(NavLink)`
     border-radius: 0.5rem;
     padding: 0.75rem;
     color: ${({ theme }) => theme.colors.white.main};
-    background-color: ${({ theme }) => theme.colors.white.white9};
+    background-color: ${({ theme }) => theme.colors.white.white5};
 
     &:hover {
       color: ${({ theme }) => theme.colors.black.main};
-      background-color: ${({ theme }) => theme.colors.black.black10};
+      background-color: ${({ theme }) => theme.colors.white.main};
     }
   }
   @media ${device.lg} {
     width: 100%;
     padding: 0.3rem 0.8rem;
-    color: ${({ theme }) => theme.colors.white.white2};
+    color: ${({ theme }) => theme.colors.white.white4};
 
     &:hover {
       color: ${({ theme }) => theme.colors.white.main};
@@ -373,7 +368,7 @@ export const RegisterButton = styled(NavLink)`
   @media ${device.xl} {
     width: 100%;
     padding: 0.4rem 1.9rem;
-    color: ${({ theme }) => theme.colors.white.white2};
+    color: ${({ theme }) => theme.colors.white.white4};
 
     &:hover {
       color: ${({ theme }) => theme.colors.white.main};
@@ -382,7 +377,7 @@ export const RegisterButton = styled(NavLink)`
   @media ${device.xxl} {
     width: 100%;
     padding: 1rem 2rem;
-    color: ${({ theme }) => theme.colors.white.white2};
+    color: ${({ theme }) => theme.colors.white.white4};
 
     &:hover {
       color: ${({ theme }) => theme.colors.white.main};

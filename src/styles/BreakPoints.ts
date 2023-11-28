@@ -13,7 +13,7 @@ const size: Size = {
   md: "901px", // for tablets
   lg: "1280px", // for laptops
   xl: "1440px", // for desktop / monitors
-  xxl: "1920px", // for big screens
+  xxl: "2000px", // for big screens
 };
 
 export const device = {
