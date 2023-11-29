@@ -3,6 +3,8 @@ import { device } from "../../styles/BreakPoints";
 import { NavLink } from "react-router-dom";
 
 export const HeaderS = styled.header`
+  position: fixed;
+  z-index: 100;
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -18,17 +20,17 @@ export const Container = styled.nav`
   @media ${device.xs} {
     flex: 1 0 90%;
     flex-direction: column;
-    border-radius: 0.25rem;
+    border-radius: 1rem !important;
   }
   @media ${device.sm} {
     flex: 1 0 90%;
     flex-direction: column;
-    border-radius: 0.25rem;
+    border-radius: 1rem !important;
   }
   @media ${device.md} {
     flex: 1 0 90%;
     flex-direction: column;
-    border-radius: 0.25rem;
+    border-radius: 1rem !important;
   }
   @media ${device.lg} {
     min-width: 80%;
@@ -112,6 +114,7 @@ export const ToggeleSwitch = styled.button<{ $isCollapsed: boolean }>`
     width: 2rem;
     height: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 

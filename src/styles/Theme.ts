@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 export const theme: DefaultTheme = {
   colors: {
     black: {
-      main: "#060606",
+      main: "#0f172a",
       black1: "#c4c4c4",
       black2: "#b2b2b2",
       black3: "#a0a0a0",
@@ -70,6 +70,12 @@ export const theme: DefaultTheme = {
   },
   fonts: {
     poppins: `'Poppins', sans-serif`,
+    size: {
+      h1: "clamp(2.5em, 1rem + 2vw, 4em)",
+      h2: "clamp(1.5em, 0.7rem + 1.5vw, 2.25em)",
+      p: "clamp(1em, 0.5rem + 1vw, 1.5em)",
+    },
+    lineHeight: " calc((1vw + 1vh + 0.5vmin) * 1.25)",
   },
   paddings: {
     container: "15px",

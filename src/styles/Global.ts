@@ -16,11 +16,12 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  min-height: 100vh;
-  width: 100%;
+  height: repeat(2, 100vh) !important;
+  width: repeat(2, 100vw)  !important;
   text-rendering: optimizeSpeed;
   font-family: ${({ theme }) => theme.fonts.poppins}, sans-serif;
   font-size: 1rem;

@@ -71,7 +71,14 @@ declare module "styled-components" {
     };
     fonts: {
       poppins: `'Poppins', sans-serif`;
+      size: {
+        h1: "clamp(2.5em, 1rem + 2vw, 4em)";
+        h2: "clamp(1.5em, 0.7rem + 1.5vw, 2.25em)";
+        p: "clamp(1em, 0.5rem + 1vw, 1.5em)";
+      };
+      lineHeight: " calc((1vw + 1vh + 0.5vmin) * 1.25)";
     };
+
     paddings: {
       container: "15px";
       pageTop: "30px";
