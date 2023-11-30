@@ -1,8 +1,7 @@
-export const Loader = () => {
-  // fetch("/api/movie")
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res));
-
-  // console.log(data);
-  return "hey";
-};
+// export const loader = () => {
+//   let data;
+//   fetch("/api/movie")
+//     .then((res) => res.json())
+//     .then((json) => (data = json));
+//   return data;
+// };

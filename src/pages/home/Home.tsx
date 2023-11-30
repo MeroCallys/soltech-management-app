@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import axios, { CanceledError } from "axios";
+import "../../mock-api/server";
 import {
   ContentWrapper,
   Main,
@@ -16,25 +16,17 @@ type Props = {
 };
 
 function Home() {
-  const [movies, setMovies] = useState<Props>();
-  const [error, setError] = useState("");
+  const [movies, setMovies] = useState<Props[]>([]);
+
   useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get<Props>("/api/movie", { signal: controller.signal })
-      .then((response) => setMovies(response.data))
-      .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message);
-      })
-      .finally(() => {
-        console.log("This is working!");
-      });
-    return () => controller.abort();
+    fetch("/api/movies")
+      .then((res) => res.json())
+      .then((json) => setMovies(json));
   }, []);
-  const data = useLoaderData();
   console.log(movies);
 
+  // const data = useLoaderData();
+  // console.log(data);
   return (
     <Main>
       <ContentWrapper>
@@ -45,6 +37,14 @@ function Home() {
             numquam, velit atque vero ipsam tempore dicta natus ad qui cum
             doloremque quam rerum distinctio fugiat? Tempora amet ratione
             aperiam repellendus!
+            {movies &&
+              movies.map((mov) => (
+                <>
+                  <p>{mov.name}</p>
+                  <p>{mov.id}</p>
+                  <p>{mov.year}</p>
+                </>
+              ))}
           </Subtitle>
         </MainTitleContainer>
       </ContentWrapper>

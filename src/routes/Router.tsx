@@ -11,18 +11,12 @@ import Inventory from "../pages/inventory/Inventory";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import Error from "../components/errors/Error";
-import { Loader as homePageLoader } from "../services/home.api";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<MainLayout />}>
-        <Route
-          index
-          element={<Home />}
-          loader={homePageLoader}
-          errorElement={<Error />}
-        />
+        <Route index element={<Home />} errorElement={<Error />} />
         <Route path="dashboard" element={<Dashboard />}>
           //SIDE BARS HERE
         </Route>
