@@ -27,10 +27,10 @@ const size: Size = {
 };
 
 export const device = {
-  xs: `(min-width: ${size.xsMin}) and (max-width: ${size.xsMax})`,
-  sm: `(min-width: ${size.smMin}) and (max-width: ${size.smMax})`,
-  md: `(min-width: ${size.mdMin}) and (max-width: ${size.mdMax})`,
-  lg: `(min-width: ${size.lgMin}) and (max-width: ${size.lgMax})`,
-  xl: `(min-width: ${size.xlMin}) and (max-width: ${size.xlMax})`,
-  xxl: `(max-width: ${size.xxlMin})`,
+  xs: `only screen and (min-width: ${size.xsMin}) and (max-width: ${size.xsMax})`,
+  sm: `only screen and (min-width: ${size.smMin}) and (max-width: ${size.smMax})`,
+  md: `only screen and (min-width: ${size.mdMin}) and (max-width: ${size.mdMax})`,
+  lg: `only screen and (min-width: ${size.lgMin}) and (max-width: ${size.lgMax})`,
+  xl: `only screen and (min-width: ${size.xlMin}) and (max-width: ${size.xlMax})`,
+  xxl: `only screen and (max-width: ${size.xxlMin})`,
 };
