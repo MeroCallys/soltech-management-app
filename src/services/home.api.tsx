@@ -1,7 +1,3 @@
-// export const loader = () => {
-//   let data;
-//   fetch("/api/movie")
-//     .then((res) => res.json())
-//     .then((json) => (data = json));
-//   return data;
-// };
+export const loader = () => {
+  return "Data from loader is here!";
+};
